@@ -1,0 +1,26 @@
+<html>
+<head><title>Register</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+   <script src="javascript/twitApp.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<div class = "container">
+<div class="col-md-offset-8 col-md-10">
+<form class = "form-auth" ng-submit = "register()">
+  <h2 style="color:white">Create an account</h2>
+  <p class = "text-warning"> {{error_message}}</p>
+
+  <div class = "form-group">
+  <input type = "username" class="form-control"placeholder="username" ng-model= "user.username">
+</div>
+  <div class = "form-group">
+<input type= "password" placeholder="password" class="form-control" ng-model = "user.password">
+</div>
+<input type = "submit" value = "Login" class = "btn btn-primary">
+</form>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Twitt</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="javascript/twitApp.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<div class ="container">
+  <div class = "row">
+<div  id = "profile" class="col">
+  <h3>{{name}}</h3>
+  <h4 style="color:white">{{"@"+current_user}}</h4>
+  <img src = "avatar.png" alt = "avatar"/>
+
+</div>
+<div class ="row">
+<div class = "col-md-offset-4 col-md-4 create">
+<form ng-submit = "post()" ng-show = "authenticated">
+<div class ="form-group">
+<input type = "text" placeholder = "Your name" class = "form-control" ng-model="newPost.created_by"/>
+</div>
+<div class ="form-group">
+<textarea required maxlength = "200" rows="3" class = "form-control" placeholder="Tweet" ng-model = "newPost.text"></textarea>
+</div>
+<input type = "submit" class = "btn btn-primary" type = "submit" value = "Twitt">
+</form>
+</div>
+</div>
+<div class = "row">
+<div id = "post-stream" <div class="col-md-offset-4 col-md-4">
+<h4 style="color:white">Tweets</h4>
+<div class = 'post' ng-repeat = "post in posts" orderBy: 'created_at': true ng-class-odd="'odd'" ng-class-even="'even'">
+  <p>{{post.created_by}} tweeted {{post.text}} at {{post.created_at}}</p>
+              </div>
+            </div>
+</div>
+</div>
+
+</body>
+
+</html>
